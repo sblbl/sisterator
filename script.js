@@ -18,6 +18,8 @@ let $_face_roundness = $('input#face-roundness'),
 	$_pupil_proportion = $('input#pupil-proportion'),
 	$_eye_width = $('input#eye-width')
 
+let pupil_prop = .5
+
 
 jQuery(document).ready(function($){
 
@@ -45,9 +47,9 @@ jQuery(document).ready(function($){
 	let change_eye_width = function (e) {
 		let width = $_eye_width.val() * 5 + 30
 		$_right_eye_sclera.attr('r', width)
-		$_right_eye_pupil.attr('r', width/3*2)
+		$_right_eye_pupil.attr('r', width * pupil_prop)
 		$_left_eye_sclera.attr('r', width)
-		$_left_eye_pupil.attr('r', width/3*2)
+		$_left_eye_pupil.attr('r', width * pupil_prop)
 	}
 	let end_change_eye_width = function (e) {
 		$(document).off('mousemove', change_roundness)
@@ -61,8 +63,11 @@ jQuery(document).ready(function($){
 		$(document).on('mouseup', end_change_pupil_proportion)
 	})
 	let change_pupil_proportion = function (e) {
-		let pupil_prop = $_pupil_proportion.val()
-		let sclera_width = $_right_eye_sclera.attr('width')
+		pupil_prop = $_pupil_proportion.val()/10
+		let sclera_width = $_right_eye_sclera.attr('r')
+		$_right_eye_pupil.attr('r', sclera_width * pupil_prop)
+		$_left_eye_pupil.attr('r', sclera_width * pupil_prop)
+
 		//let width = $_eye_width.val() * 5 + 30
 	}
 	let end_change_pupil_proportion = function (e) {
