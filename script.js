@@ -11,11 +11,13 @@ let $_nun = $('#nun'),
 	$_left_eye_sclera = $('#left-eye-sclera'),
 	$_left_eye_pupil = $('#left-eye-pupil'),
 	$_veil = $('#back-veil'),
-	$_hinge = $('#hinge')
+	$_variable_veil = $('#variable-front-veil'),
+	$_hinge = $('#hinge'),
+	$_background = $('#background')
 
 
 let $_face_roundness = $('input#face-roundness'),
-	$_nun_height = $('input#nun-height'),
+	$_nun_dress = $('input#nun-dress'),
 	$_nun_width = $('input#nun-width'),
 	$_pupil_proportion = $('input#pupil-proportion'),
 	$_eye_width = $('input#eye-width')
@@ -40,6 +42,7 @@ jQuery(document).ready(function($){
 		let roundness = $_face_roundness.val() * 30
 		$_face.attr('rx', roundness)
 		$_face.attr('rx', roundness)
+		$_variable_veil.attr('height', $_face_roundness.val()*19)
 	}
 	let end_change_roundness = function (e) {
 		$(document).off('mousemove', change_roundness)
@@ -105,6 +108,105 @@ jQuery(document).ready(function($){
 	let end_change_nun_width = function (e) {
 		$(document).off('mousemove', change_nun_width)
 		$(document).off('mouseup', end_change_nun_width)
+	}
+
+	/*---------------- NUN DRESS  ----------------*/
+
+	$_nun_dress.on('mousedown', function (e) {
+		$(document).on('mousemove', change_nun_dress)
+		$(document).on('mouseup', end_change_nun_dress)
+	})
+
+	let change_nun_dress = function (e) {
+		let dress = $_nun_dress.val()
+		console.log(dress)
+		switch(dress) {
+			case "0":
+				$_veil.attr('fill', '#FFFFFF')
+				$_shoulders.attr('fill', '#FFFFFF')
+				$_trunk.attr('fill', '#FFFFFF')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "1":
+				$_veil.attr('fill', '#E6E6E6')
+				$_shoulders.attr('fill', '#E6E6E6')
+				$_trunk.attr('fill', '#E6E6E6')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "2":
+				$_veil.attr('fill', '#CCCCCC')
+				$_shoulders.attr('fill', '#CCCCCC')
+				$_trunk.attr('fill', '#CCCCCC')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "3":
+				$_veil.attr('fill', '#B3B3B3')
+				$_shoulders.attr('fill', '#B3B3B3')
+				$_trunk.attr('fill', '#B3B3B3')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "4":
+				$_veil.attr('fill', '#808080')
+				$_shoulders.attr('fill', '#808080')
+				$_trunk.attr('fill', '#808080')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "5":
+				$_veil.attr('fill', '#666666')
+				$_shoulders.attr('fill', '#666666')
+				$_trunk.attr('fill', '#666666')
+				$_left_eye_pupil.attr('fill', '#DC143C')
+				$_right_eye_pupil.attr('fill', '#DC143C')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			case "6":
+				$_veil.attr('fill', '#4D4D4D')
+				$_shoulders.attr('fill', '#4D4D4D')
+				$_trunk.attr('fill', '#4D4D4D')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			case "7":
+				$_veil.attr('fill', '#333333')
+				$_shoulders.attr('fill', '#333333')
+				$_trunk.attr('fill', '#333333')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			case "8":
+				$_veil.attr('fill', '#1A1A1A')
+				$_shoulders.attr('fill', '#1A1A1A')
+				$_trunk.attr('fill', '#1A1A1A')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			default:
+				$_veil.attr('fill', '#000000')
+				$_shoulders.attr('fill', '#000000')
+				$_trunk.attr('fill', '#000000')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+		}
+	}
+
+	let end_change_nun_dress = function (e) {
+		$(document).off('mousemove', change_nun_dress)
+		$(document).off('mouseup', end_change_nun_dress)
 	}
 
 
