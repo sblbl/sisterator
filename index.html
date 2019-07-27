@@ -13,14 +13,14 @@
 			<th>face roundness</th>
 			<th>nun height</th>
 			<th>nun width</th>
-			<th>eye height</th>
+			<th>pupil-proportion</th>
 			<th>eye width</th>
 		</tr>
 		<tr>
 			<td><input type="range" name="face-roundness" id="face-roundness" min="0" max="10"></td>
 			<td><input type="range" name="nun-height" id="nun-height" min="0" max="10"></td>
 			<td><input type="range" name="nun-width" id="nun-width" min="0" max="10"></td>
-			<td><input type="range" name="eye-height" id="eye-height" min="0" max="10"></td>
+			<td><input type="range" name="pupil-proportion" id="pupil-proportion" min="0" max="10"></td>
 			<td><input type="range" name="eye-width" id="eye-width" min="0" max="10"></td>
 		</tr>
 	</table>
@@ -43,12 +43,12 @@
 				<rect id="face" x="1534.7" y="691.2" fill="#FEDA32" width="558.9" height="530.7"/>
 				<g>
 					<g id="left-eye">
-						<circle fill="#FFFFFF" cx="1667.8" cy="927.8" r="44.1"/>
-						<circle cx="1667.8" cy="927.8" r="21.8"/>
+						<circle id="left-eye-sclera" fill="#FFFFFF" cx="1667.8" cy="927.8" r="44.1"/>
+						<circle id="left-eye-pupil" cx="1667.8" cy="927.8" r="21.8"/>
 					</g>
 					<g id="right-eye">
-						<circle fill="#FFFFFF" cx="1960.5" cy="927.8" r="44.1"/>
-						<circle cx="1960.5" cy="927.8" r="21.8"/>
+						<circle id="right-eye-sclera" fill="#FFFFFF" cx="1960.5" cy="927.8" r="44.1"/>
+						<circle id="right-eye-pupil" cx="1960.5" cy="927.8" r="21.8"/>
 					</g>
 				</g>
 				<polygon id="nose" fill="#EB5D78" points="1780.4,1028.8 1814.2,974.6 1814.2,974.6 1848,1028.8 "/>
