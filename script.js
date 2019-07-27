@@ -74,6 +74,8 @@ jQuery(document).ready(function($){
 		$(document).off('mousemove', change_pupil_proportion)
 		$(document).off('mouseup', end_change_pupil_proportion)
 	}
+
+	
 })
 
 /*add batman mode*/
