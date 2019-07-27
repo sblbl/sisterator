@@ -30,7 +30,7 @@ jQuery(document).ready(function($){
 		$(document).on('mouseup', end_change_roundness)
 	})
 	let change_roundness = function (e) {
-		let roundness = $_face_roundness.val() * 50
+		let roundness = $_face_roundness.val() * 30
 		$_face.attr('rx', roundness)
 		$_face.attr('rx', roundness)
 	}
