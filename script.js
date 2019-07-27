@@ -10,7 +10,8 @@ let $_nun = $('#nun'),
 	$_left_eye = $('#left-eye'),
 	$_left_eye_sclera = $('#left-eye-sclera'),
 	$_left_eye_pupil = $('#left-eye-pupil'),
-	$_veil = $('#back-veil')
+	$_veil = $('#back-veil'),
+	$_hinge = $('#hinge')
 
 
 let $_face_roundness = $('input#face-roundness'),
@@ -68,50 +69,45 @@ jQuery(document).ready(function($){
 		$(document).on('mousemove', change_pupil_proportion)
 		$(document).on('mouseup', end_change_pupil_proportion)
 	})
+
 	let change_pupil_proportion = function (e) {
 		pupil_prop = $_pupil_proportion.val()/10
 		let sclera_width = $_right_eye_sclera.attr('r')
 		$_right_eye_pupil.attr('r', sclera_width * pupil_prop)
 		$_left_eye_pupil.attr('r', sclera_width * pupil_prop)
-
-		//let width = $_eye_width.val() * 5 + 30
 	}
+
 	let end_change_pupil_proportion = function (e) {
 		$(document).off('mousemove', change_pupil_proportion)
 		$(document).off('mouseup', end_change_pupil_proportion)
 	}
 
-<<<<<<< HEAD
-	
-=======
-		/*---------------- BODY WIDTH  ----------------*/
-		$_nun_width.on('mousedown', function (e) {
-			$(document).on('mousemove', change_nun_width)
-			$(document).on('mouseup', end_change_nun_width)
-		})
+	/*---------------- BODY WIDTH  ----------------*/
 
+	$_nun_width.on('mousedown', function (e) {
+		$(document).on('mousemove', change_nun_width)
+		$(document).on('mouseup', end_change_nun_width)
+	})
 
-
-		let change_nun_width = function (e) {
-			let width = $_nun_width.val()*180+200
-			let x = nun_center_x - (width/2)
-			$_trunk.attr('width',width)
-			$_shoulders.attr('r',width/2)
-			$_trunk.attr('x',x)
+	let change_nun_width = function (e) {
+		let width = $_nun_width.val()*180+150
+		let x = nun_center_x - (width/2)
+		$_trunk.attr('width',width)
+		$_shoulders.attr('r',width/2)
+		$_trunk.attr('x',x)
+		$_hinge.attr('y1', $_shoulders.attr('cy')-$_shoulders.attr('r'))
+		let visage_x = 
+		$_visage.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
+		$_veil.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
 		
+	}
+
+	let end_change_nun_width = function (e) {
+		$(document).off('mousemove', change_nun_width)
+		$(document).off('mouseup', end_change_nun_width)
+	}
 
 
-
-			//let width = $_eye_width.val() * 5 + 30
-		}
-		let end_change_nun_width = function (e) {
-			$(document).off('mousemove', change_nun_width)
-			$(document).off('mouseup', end_change_nun_width)
-		}
-
-
-
->>>>>>> d768630db961cac2d1cda9b3ff7f434ccd27f138
 })
 
 /*add batman mode*/
