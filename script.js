@@ -38,10 +38,12 @@ function map(value, start1, stop1, start2, stop2) {
 let verify_bat_val = function () {
 	if ($_face_roundness.val()==6 && $_nun_dress.val()==6 && $_nun_width.val()==6 && $_pupil_proportion.val()==6 && $_eye_width.val()==6) {
 		$_bat_suit.attr('fill-opacity', 1)
+		$_background.attr('fill', '#00008B')
 		console.log('NANANANANANAN')
 		return true
 	} else {
 		$_bat_suit.attr('fill-opacity', 0)
+		$_background.attr('fill', '#F0F8FF')
 		return false
 	}
 }
@@ -259,7 +261,7 @@ jQuery(document).ready(function($){
 						  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
 						  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
 						  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
-						  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+						  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#FEDA32'];
 		$_face.attr('fill', colorArray[Math.floor(Math.random()*colorArray.length)])
 	})
 })

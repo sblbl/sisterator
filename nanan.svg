@@ -13,9 +13,9 @@
 	.st7{stroke:#FFFFFF;stroke-width:10;}
 </style>
 <rect id="background" y="0" class="st0" width="3628.3" height="3186.1"/>
-<g>
+<g id="bat-suit">
 	<ellipse class="st1" cx="1814.1" cy="2037.7" rx="1814.2" ry="1189.5"/>
-	<g id="bat-suit">
+	<g>
 		<polyline class="st2" points="1982.3,759.3 1916.4,954.5 2048.2,954.5 1982.3,759.3 		"/>
 		<polyline class="st2" points="1646,759.3 1711.9,954.5 1580.1,954.5 1646,759.3 		"/>
 	</g>
