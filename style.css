@@ -3,13 +3,62 @@
 	font-size: 14px;
 }
 
-/* #face.is-colorized  {
-	fill:'#fc92d0';
-} */
+/*** CSS GRID ***/
+.grid-container-title{
+	display: grid;
+	grid-template-areas:
+	'header header header header header header'
+	'menu main main main main main'
+	padding:5vw;
+}
+
+
+
+/**** BUTTON STYLE ****/
 
 .button {
-	width: 100px;
-  height: 50px;
-	background-color: lighten green;
-	border-radius: 30px;
+	  background-color: #FEDA32;
+	  border: none;
+	  color: #000000;
+	  padding: 0.8vw 3vw;
+	  text-align: center;
+	  text-decoration: none;
+		border-radius: 10px;
+	  display: inline-block;
+		margin-bottom: 0.2vw;
+	  font-size: 1em;
+	  cursor: pointer;
+}
+
+
+
+
+
+/**** SLIDER STYLE ****/
+.slider {
+	cursor: pointer;
+  -webkit-appearance: none;
+	height: 0.5vw;
+  border-radius: 4px;
+  background: #dedede;
+  outline: none;
+}
+
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FEDA32;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
 }
