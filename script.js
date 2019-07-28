@@ -212,8 +212,10 @@ case 300:
   $_shoulders.attr('r',width/2)
   $_trunk.attr('x',x)
   $_hinge.attr('y1', $_shoulders.attr('cy')-$_shoulders.attr('r'))
+  let visage_x =
   $_visage.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
   $_veil.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
+
  }
 
  let end_change_nun_width = function (e) {
@@ -320,6 +322,15 @@ case 300:
   $(document).off('mouseup', end_change_nun_dress)
  }
 
+
+ var button = document.querySelector('button');
+ button.onclick = function () {
+
+var red = Math.floor(Math.random() * 256);
+var blue = Math.floor(Math.random() * 256);
+var green = Math.floor(Math.random() * 256);
+ document.getElementById('face').style.fill = "rgb(" + red + "," + green + "," + blue + ")";
+ };
 })
 
 /*add batman mode*/
