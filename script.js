@@ -261,8 +261,7 @@ case 300:
    case "3":
     $_veil.attr('fill', '#B3B3B3')
     $_shoulders.attr('fill', '#B3B3B3')
-    $_trunk.attr('
-fill', '#B3B3B3')
+    $_trunk.attr('fill', '#B3B3B3')
     $_left_eye_pupil.attr('fill', '#000000')
     $_right_eye_pupil.attr('fill', '#000000')
     $_hinge.attr('stroke', '#000000')
