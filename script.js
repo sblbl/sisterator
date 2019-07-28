@@ -26,6 +26,7 @@ let $_face_roundness = $('input#face-roundness'),
 	$_pupil_proportion = $('input#pupil-proportion'),
 	$_eye_width = $('input#eye-width')
 	$_color_button = $('#color-button')
+	$_nose_button = $('#nose-path')
 
 /*---------------- USEFUL STUFF ----------------*/
 
@@ -263,6 +264,33 @@ jQuery(document).ready(function($){
 						  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
 						  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#FEDA32'];
 		$_face.attr('fill', colorArray[Math.floor(Math.random()*colorArray.length)])
+	})
+
+	$_nose_button.on('click', function() {
+		let val = $_nose_button.attr('value')
+
+		if (val >= 3) {
+			val = 1
+		} else {
+			val++
+		}
+		$_nose_button.attr('value', val)
+		console.log(val)
+		$('#nose-path-val').html(val)
+		switch (val) {
+			case 1:
+				$('.nose').attr('fill-opacity', 0)
+				$('#nose-1').attr('fill-opacity', 1)
+				break;
+			case 2:
+				$('.nose').attr('fill-opacity', 0)
+				$('#nose-2').attr('fill-opacity', 1)
+				break;
+			default:
+				$('.nose').attr('fill-opacity', 0)
+				$('#nose-3').attr('fill-opacity', 1)
+				break;
+		}
 	})
 })
 
