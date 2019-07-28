@@ -108,7 +108,6 @@ jQuery(document).ready(function($){
 		console.log(effectiveCursorPosition)
 		let roundness_constant = 30
 		let roundness
-		//let roundness = $_face_roundness.val() * 30
 		switch(effectiveCursorPosition) {
 			case 60:
 			roundness = 0
@@ -153,8 +152,8 @@ jQuery(document).ready(function($){
 		}
 		$_face.attr('rx', roundness)
 		$_face.attr('rx', roundness)
-		//$_variable_veil.attr('height', roundness*19)
 	}
+
 	let end_change_roundness = function (e) {
 		$(document).off('mousemove', change_roundness)
 		$(document).off('mouseup', end_change_roundness)
@@ -326,17 +325,3 @@ jQuery(document).ready(function($){
 })
 
 /*add batman mode*/
-
-/*
-$_eye_width.on('mousedown', function (e) {
-	$(document).on('mousemove', change_eye_width)
-	$(document).on('mouseup', end_change_eye_width)
-})
-let change_eye_width = function (e) {
-
-}
-let end_change_eye_width = function (e) {
-	$(document).off('mousemove', )
-	$(document).off('mouseup', )
-}
-*/
