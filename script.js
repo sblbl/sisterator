@@ -26,7 +26,6 @@ let nun_center_x = 1814.15;
 
 
 
-
 jQuery(document).ready(function($){
 
 	/*---------------- FACE ROUNDNESS ----------------*/
@@ -95,7 +94,7 @@ jQuery(document).ready(function($){
 			$_trunk.attr('width',width)
 			$_shoulders.attr('r',width/2)
 			$_trunk.attr('x',x)
-		
+
 
 
 
@@ -106,9 +105,18 @@ jQuery(document).ready(function($){
 			$(document).off('mouseup', end_change_nun_width)
 		}
 
+});
 
 
-})
+var button = document.querySelector('.button');
+
+button.onclick = function () {
+ var red = Math.floor(Math.random() * 256);
+ var blue = Math.floor(Math.random() * 256);
+ var green = Math.floor(Math.random() * 256);
+document.getElementById('face').style.fill = "rgb(" + red + "," + green + "," + blue + ")";
+};
+
 
 /*add batman mode*/
 
