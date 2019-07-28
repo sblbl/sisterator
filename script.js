@@ -1,7 +1,7 @@
 /*---------------- SVG SETTINGS ----------------*/
 
 let isTouchDevice = !!('ontouchstart' in window)
-let svgRoot = $('svg')[0] 
+let svgRoot = $('svg')[0]
 const  xlinkns = "http://www.w3.org/1999/xlink";
 const  svgns = "http://www.w3.org/2000/svg";
 
@@ -212,10 +212,8 @@ case 300:
   $_shoulders.attr('r',width/2)
   $_trunk.attr('x',x)
   $_hinge.attr('y1', $_shoulders.attr('cy')-$_shoulders.attr('r'))
-  let visage_x = 
   $_visage.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
   $_veil.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
-  
  }
 
  let end_change_nun_width = function (e) {
@@ -322,21 +320,6 @@ case 300:
   $(document).off('mouseup', end_change_nun_dress)
  }
 
-
 })
 
 /*add batman mode*/
-
-/*
-$_eye_width.on('mousedown', function (e) {
- $(document).on('mousemove', change_eye_width)
- $(document).on('mouseup', end_change_eye_width)
-})
-let change_eye_width = function (e) {
-
-}
-let end_change_eye_width = function (e) {
- $(document).off('mousemove', )
- $(document).off('mouseup', )
-}
-*/
