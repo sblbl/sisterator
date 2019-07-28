@@ -72,6 +72,9 @@ jQuery(document).ready(function($){
 	let mouseAbsPosition
 	let cursorXDifference
 
+<<<<<<< HEAD
+jQuery(document).ready(function($){
+=======
 	$('.input#face-roundness').on('mousedown', function (e) {
 		let mouse = findSVGCoords(uniqueEvent(e))
 		let $_container = $('#face-roundness .cursor-container')
@@ -81,6 +84,7 @@ jQuery(document).ready(function($){
 		$(document).on('mouseup', end_change_roundness)
 	})
 
+>>>>>>> 344736a731c846ca23803d00961fabc2a48238f5
 
 	$('#face-roundness-cursor').on('mousedown', (e) => {
 		let mouse = findSVGCoords(uniqueEvent(e))
@@ -204,6 +208,15 @@ jQuery(document).ready(function($){
 		$(document).on('mouseup', end_change_nun_width)
 	})
 
+<<<<<<< HEAD
+		let change_nun_width = function (e) {
+			let width = $_nun_width.val()*180+200
+			let x = nun_center_x - (width/2)
+			$_trunk.attr('width',width)
+			$_shoulders.attr('r',width/2)
+			$_trunk.attr('x',x)
+
+=======
 	let change_nun_width = function (e) {
 		let width = $_nun_width.val()*180+150
 		let x = nun_center_x - (width/2)
@@ -216,6 +229,7 @@ jQuery(document).ready(function($){
 		$_veil.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
 		
 	}
+>>>>>>> 344736a731c846ca23803d00961fabc2a48238f5
 
 	let end_change_nun_width = function (e) {
 		$(document).off('mousemove', change_nun_width)
@@ -316,12 +330,24 @@ jQuery(document).ready(function($){
 		}
 	}
 
+<<<<<<< HEAD
+});
+=======
 	let end_change_nun_dress = function (e) {
 		$(document).off('mousemove', change_nun_dress)
 		$(document).off('mouseup', end_change_nun_dress)
 	}
+>>>>>>> 344736a731c846ca23803d00961fabc2a48238f5
 
 
-})
+var button = document.querySelector('.button');
+
+button.onclick = function () {
+ var red = Math.floor(Math.random() * 256);
+ var blue = Math.floor(Math.random() * 256);
+ var green = Math.floor(Math.random() * 256);
+document.getElementById('face').style.fill = "rgb(" + red + "," + green + "," + blue + ")";
+};
+
 
 /*add batman mode*/

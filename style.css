@@ -1,3 +1,17 @@
 * {
 	font-family: 'Noticia Text', serif;
 }
+<<<<<<< HEAD
+
+/* #face.is-colorized  {
+	fill:'#fc92d0';
+} */
+
+.button {
+	width: 100px;
+  height: 50px;
+	background-color: lighten green;
+	border-radius: 30px;
+}
+=======
+>>>>>>> 344736a731c846ca23803d00961fabc2a48238f5
