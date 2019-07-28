@@ -1,33 +1,3 @@
-/*---------------- SVG SETTINGS ----------------*/
-
-let isTouchDevice = !!('ontouchstart' in window)
-let svgRoot = $('svg')[0]
-const  xlinkns = "http://www.w3.org/1999/xlink";
-const  svgns = "http://www.w3.org/2000/svg";
-
-uniqueEvent = function(e){
-	if(isTouchDevice) {
-		e.x = e.touches[0].pageX;
-		e.y = e.touches[0].pageY;
-	} else {
-		e.x = e.pageX;
-		e.y = e.pageY;
-	}
-	return e;
-}
-
-function findSVGCoords(e, matrix, point, offsetX, offsetY){
-	matrix = matrix || svgRoot.getScreenCTM();
-	point = point || svgRoot.createSVGPoint();
-	offsetY = offsetY || $(window).scrollTop();
-	offsetX = offsetX || $(window).scrollLeft();
-	point.x = e.x - offsetX;
-	point.y = e.y - offsetY;// - $_editingArea.attr('data-y');
-	point = point.matrixTransform(matrix.inverse());
-	return point;
-}
-
-
 /*---------------- NUN DATA ----------------*/
 
 let $_nun = $('#nun'),
@@ -54,6 +24,7 @@ let $_face_roundness = $('input#face-roundness'),
 	$_nun_width = $('input#nun-width'),
 	$_pupil_proportion = $('input#pupil-proportion'),
 	$_eye_width = $('input#eye-width')
+	$_color_button = $('#color-button')
 
 /*---------------- USEFUL STUFF ----------------*/
 
@@ -260,15 +231,19 @@ jQuery(document).ready(function($){
 		$(document).off('mouseup', end_change_nun_dress)
 	}
 
-
-	var button = document.querySelector('button');
-	button.onclick = function () {
-
-var red = Math.floor(Math.random() * 256);
-var blue = Math.floor(Math.random() * 256);
-var green = Math.floor(Math.random() * 256);
-	document.getElementById('face').style.fill = "rgb(" + red + "," + green + "," + blue + ")";
-	};
+	$_color_button.on('click', function () {
+		let colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+						  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+						  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+						  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+						  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+						  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+						  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+						  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+						  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+						  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+		$_face.attr('fill', colorArray[Math.floor(Math.random()*colorArray.length)])
+	})
 })
 
 /*add batman mode*/
