@@ -15,6 +15,7 @@ let $_nun = $('#nun'),
 	$_veil = $('#back-veil'),
 	$_variable_veil = $('#variable-front-veil'),
 	$_hinge = $('#hinge'),
+	$_bat_suit = $('#bat-suit')
 	$_background = $('#background')
 
 /*---------------- INTERFACE DATA ----------------*/
@@ -34,6 +35,17 @@ function map(value, start1, stop1, start2, stop2) {
 	return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
 }
 
+let verify_bat_val = function () {
+	if ($_face_roundness.val()==6 && $_nun_dress.val()==6 && $_nun_width.val()==6 && $_pupil_proportion.val()==6 && $_eye_width.val()==6) {
+		$_bat_suit.attr('fill-opacity', 1)
+		console.log('NANANANANANAN')
+		return true
+	} else {
+		$_bat_suit.attr('fill-opacity', 0)
+		return false
+	}
+}
+
 /*---------------- MAIN FUNCTION ----------------*/
 
 jQuery(document).ready(function($){
@@ -44,10 +56,6 @@ jQuery(document).ready(function($){
 	let cursorXDifference
 
 	$_face_roundness.on('mousedown', function (e) {
-		let mouse = findSVGCoords(uniqueEvent(e))
-		let $_container = $('#face-roundness .cursor-container')
-		mouseAbsPosition = mouse.x-parseInt($_container.attr('x'))
-		cursorXDifference = mouseAbsPosition-$('#face-roundness-cursor').attr('x')
 		$(document).on('mousemove', change_roundness)
 		$(document).on('mouseup', end_change_roundness)
 	})
@@ -63,6 +71,8 @@ jQuery(document).ready(function($){
 		$_face.attr('rx', roundness)
 		$_face.attr('rx', roundness)
 		$_variable_veil.attr('height', $_face_roundness.val()*19)
+		$('#face-roundness-val').html($_face_roundness.val())
+		verify_bat_val()
 	}
 	let end_change_roundness = function (e) {
 		$(document).off('mousemove', change_roundness)
@@ -81,6 +91,8 @@ jQuery(document).ready(function($){
 		$_right_eye_pupil.attr('r', width * pupil_prop)
 		$_left_eye_sclera.attr('r', width)
 		$_left_eye_pupil.attr('r', width * pupil_prop)
+		$('#eye-width-val').html($_eye_width.val())
+		verify_bat_val()
 	}
 
 	let end_change_eye_width = function (e) {
@@ -100,6 +112,8 @@ jQuery(document).ready(function($){
 		let sclera_width = $_right_eye_sclera.attr('r')
 		$_right_eye_pupil.attr('r', sclera_width * pupil_prop)
 		$_left_eye_pupil.attr('r', sclera_width * pupil_prop)
+		$('#pupil-proportion-val').html($_pupil_proportion.val())
+		verify_bat_val()
 	}
 
 	let end_change_pupil_proportion = function (e) {
@@ -124,6 +138,8 @@ jQuery(document).ready(function($){
 		let visage_x =
 		$_visage.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
 		$_veil.attr('transform', `translate(${0}, ${$_shoulders.attr('cy')-$_shoulders.attr('r')-($_face.attr('height')*3.6)})`)
+		$('#nun-width-val').html($_nun_width.val())
+		verify_bat_val()
 
 	}
 
@@ -143,87 +159,89 @@ jQuery(document).ready(function($){
 		let dress = $_nun_dress.val()
 		console.log(dress)
 		switch(dress) {
-		case "0":
-	$_veil.attr('fill', '#FFFFFF')
-	$_shoulders.attr('fill', '#FFFFFF')
-	$_trunk.attr('fill', '#FFFFFF')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#000000')
-	break;
-		case "1":
-	$_veil.attr('fill', '#E6E6E6')
-	$_shoulders.attr('fill', '#E6E6E6')
-	$_trunk.attr('fill', '#E6E6E6')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#000000')
-	break;
-		case "2":
-	$_veil.attr('fill', '#CCCCCC')
-	$_shoulders.attr('fill', '#CCCCCC')
-	$_trunk.attr('fill', '#CCCCCC')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#000000')
-	break;
-		case "3":
-	$_veil.attr('fill', '#B3B3B3')
-	$_shoulders.attr('fill', '#B3B3B3')
-	$_trunk.attr('fill', '#B3B3B3')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#000000')
-	break;
-		case "4":
-	$_veil.attr('fill', '#808080')
-	$_shoulders.attr('fill', '#808080')
-	$_trunk.attr('fill', '#808080')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#000000')
-	break;
-		case "5":
-	$_veil.attr('fill', '#666666')
-	$_shoulders.attr('fill', '#666666')
-	$_trunk.attr('fill', '#666666')
-	$_left_eye_pupil.attr('fill', '#DC143C')
-	$_right_eye_pupil.attr('fill', '#DC143C')
-	$_hinge.attr('stroke', '#FFFFFF')
-	break;
-		case "6":
-	$_veil.attr('fill', '#4D4D4D')
-	$_shoulders.attr('fill', '#4D4D4D')
-	$_trunk.attr('fill', '#4D4D4D')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#FFFFFF')
-	break;
-		case "7":
-	$_veil.attr('fill', '#333333')
-	$_shoulders.attr('fill', '#333333')
-	$_trunk.attr('fill', '#333333')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#FFFFFF')
-	break;
-		case "8":
-	$_veil.attr('fill', '#1A1A1A')
-	$_shoulders.attr('fill', '#1A1A1A')
-	$_trunk.attr('fill', '#1A1A1A')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#FFFFFF')
-	break;
-		default:
-	$_veil.attr('fill', '#000000')
-	$_shoulders.attr('fill', '#000000')
-	$_trunk.attr('fill', '#000000')
-	$_left_eye_pupil.attr('fill', '#000000')
-	$_right_eye_pupil.attr('fill', '#000000')
-	$_hinge.attr('stroke', '#FFFFFF')
-	break;
+			case "0":
+				$_veil.attr('fill', '#FFFFFF')
+				$_shoulders.attr('fill', '#FFFFFF')
+				$_trunk.attr('fill', '#FFFFFF')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "1":
+				$_veil.attr('fill', '#E6E6E6')
+				$_shoulders.attr('fill', '#E6E6E6')
+				$_trunk.attr('fill', '#E6E6E6')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "2":
+				$_veil.attr('fill', '#CCCCCC')
+				$_shoulders.attr('fill', '#CCCCCC')
+				$_trunk.attr('fill', '#CCCCCC')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "3":
+				$_veil.attr('fill', '#B3B3B3')
+				$_shoulders.attr('fill', '#B3B3B3')
+				$_trunk.attr('fill', '#B3B3B3')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "4":
+				$_veil.attr('fill', '#808080')
+				$_shoulders.attr('fill', '#808080')
+				$_trunk.attr('fill', '#808080')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#000000')
+				break;
+			case "5":
+				$_veil.attr('fill', '#666666')
+				$_shoulders.attr('fill', '#666666')
+				$_trunk.attr('fill', '#666666')
+				$_left_eye_pupil.attr('fill', '#DC143C')
+				$_right_eye_pupil.attr('fill', '#DC143C')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			case "6":
+				$_veil.attr('fill', '#4D4D4D')
+				$_shoulders.attr('fill', '#4D4D4D')
+				$_trunk.attr('fill', '#4D4D4D')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			case "7":
+				$_veil.attr('fill', '#333333')
+				$_shoulders.attr('fill', '#333333')
+				$_trunk.attr('fill', '#333333')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			case "8":
+				$_veil.attr('fill', '#1A1A1A')
+				$_shoulders.attr('fill', '#1A1A1A')
+				$_trunk.attr('fill', '#1A1A1A')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
+			default:
+				$_veil.attr('fill', '#000000')
+				$_shoulders.attr('fill', '#000000')
+				$_trunk.attr('fill', '#000000')
+				$_left_eye_pupil.attr('fill', '#000000')
+				$_right_eye_pupil.attr('fill', '#000000')
+				$_hinge.attr('stroke', '#FFFFFF')
+				break;
 		}
+		$('#nun-dress-val').html($_nun_dress.val())
+		verify_bat_val()
 	}
 
 	let end_change_nun_dress = function (e) {
