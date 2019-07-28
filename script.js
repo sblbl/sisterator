@@ -15,7 +15,8 @@ let $_nun = $('#nun'),
 	$_veil = $('#back-veil'),
 	$_variable_veil = $('#variable-front-veil'),
 	$_hinge = $('#hinge'),
-	$_bat_suit = $('#bat-suit')
+	$_moustache = $('#moustache'),
+	$_bat_suit = $('#bat-suit'),
 	$_background = $('#background')
 
 /*---------------- INTERFACE DATA ----------------*/
@@ -24,8 +25,9 @@ let $_face_roundness = $('input#face-roundness'),
 	$_nun_dress = $('input#nun-dress'),
 	$_nun_width = $('input#nun-width'),
 	$_pupil_proportion = $('input#pupil-proportion'),
-	$_eye_width = $('input#eye-width')
-	$_color_button = $('#color-button')
+	$_eye_width = $('input#eye-width'),
+	$_moustache_lenght = $('#moustache-lenght'),
+	$_color_button = $('#color-button'),
 	$_nose_button = $('#nose-path')
 
 /*---------------- USEFUL STUFF ----------------*/
@@ -37,7 +39,7 @@ function map(value, start1, stop1, start2, stop2) {
 }
 
 let verify_bat_val = function () {
-	if ($_face_roundness.val()==6 && $_nun_dress.val()==6 && $_nun_width.val()==6 && $_pupil_proportion.val()==6 && $_eye_width.val()==6) {
+	if ($_face_roundness.val()==6 && $_nun_dress.val()==6 && $_nun_width.val()==6 && $_pupil_proportion.val()==6 && $_eye_width.val()==6 && $_moustache_lenght.val()==6) {
 		$_bat_suit.attr('fill-opacity', 1)
 		$_background.attr('fill', '#00008B')
 		console.log('NANANANANANAN')
@@ -111,7 +113,7 @@ jQuery(document).ready(function($){
 	})
 
 	let change_pupil_proportion = function (e) {
-		pupil_prop = $_pupil_proportion.val()/10
+		let pupil_prop = $_pupil_proportion.val()/10
 		let sclera_width = $_right_eye_sclera.attr('r')
 		$_right_eye_pupil.attr('r', sclera_width * pupil_prop)
 		$_left_eye_pupil.attr('r', sclera_width * pupil_prop)
@@ -122,6 +124,33 @@ jQuery(document).ready(function($){
 	let end_change_pupil_proportion = function (e) {
 		$(document).off('mousemove', change_pupil_proportion)
 		$(document).off('mouseup', end_change_pupil_proportion)
+	}
+
+	/*---------------- MOUSTACHE LENGHT  ----------------*/
+
+	$_moustache_lenght.on('mousedown', function (e) {
+		$(document).on('mousemove', change_moustache_lenght)
+		$(document).on('mouseup', end_change_moustache_lenght)
+	})
+
+	let change_moustache_lenght = function (e) {
+		let lenght = $_moustache_lenght.val()*3
+		let y1 = 1684.1
+		if (lenght == 0) {
+			$_moustache.attr('stroke-opacity', 0)
+		} else {
+			$_moustache.attr('stroke-opacity', 1)
+		}
+		$('#moustache line').each(function () {
+			$(this).attr('y2', y1+lenght)
+		})
+		$('#moustache-lenght-val').html($_moustache_lenght.val())
+		verify_bat_val()
+	}
+
+	let end_change_moustache_lenght = function (e) {
+		$(document).off('mousemove', change_moustache_lenght)
+		$(document).off('mouseup', end_change_moustache_lenght)
 	}
 
 	/*---------------- BODY WIDTH  ----------------*/
