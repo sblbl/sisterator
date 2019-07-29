@@ -55,7 +55,8 @@ let verify_bat_val = function () {
 
 /*---------------- MAIN FUNCTION ----------------*/
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function($) {
+
 
 	/*---------------- FACE ROUNDNESS ----------------*/
 
