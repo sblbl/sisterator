@@ -13,16 +13,28 @@
 	margin: auto;
 }
 
+
+span {
+	text-align: center;
+	font-size: 1em;
+}
 /*** CSS GRID ***/
 .grid-container-title{
 	display: grid;
-	grid-template-areas:
-	'header header header header header header'
-	'menu main main main main main'
-	padding:5vw;
+	grid-template-columns: auto;
 }
 
+.header {
 
+	padding-bottom: 2vw;
+}
+
+.grid-container-custom {
+	display: grid;
+	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+	margin-bottom: 2vw;
+	margin-top: 2vw;
+}
 
 /**** BUTTON STYLE ****/
 
