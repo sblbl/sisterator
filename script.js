@@ -71,7 +71,7 @@ jQuery(document).ready(function($){
 		$(document).on('mouseup', end_change_roundness)
 	})
 
-	let change_roundness = function (e) {	
+	let change_roundness = function (e) {
 		let roundness = $_face_roundness.val()*30
 		$_face.attr('rx', roundness)
 		$_face.attr('rx', roundness)
@@ -282,15 +282,15 @@ jQuery(document).ready(function($){
 	}
 
 	$_color_button.on('click', function () {
-		let colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		let colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 						  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
-						  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+						  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
 						  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
-						  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+						  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
 						  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
-						  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+						  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',
 						  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
-						  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+						  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
 						  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#FEDA32'];
 		$_face.attr('fill', colorArray[Math.floor(Math.random()*colorArray.length)])
 	})
@@ -321,6 +321,66 @@ jQuery(document).ready(function($){
 				break;
 		}
 	})
+
+
+	html2canvas('#capture').then(function(canvas) {
+    document.body.appendChild(canvas);
+});
+// $('.letter').mouseover(function (e){
+// 	$('.letter').style('fill','#FEDA32');
+// })
+// $('.letter').mouseleave(function (e) {
+// 	$('.letter').style('fill','#000000');
+// })
+
 })
 
-/*add batman mode*/
+// var apikey = "bMiQqeb5MlwyQAagk29MkVRHm";
+// var apisecret = "YqnCBm54oSchGtoGnUNsA4mXs6uuRUgmZrkhxFJgtJja6xiQuQ";
+//
+// var accestoken = "1155793512157339648-X2PPDcmGtVxpcdAtfZOq5cYEsxDurC";
+// var secrettoken = "poovbtI3njhEashjVgSaTqjq9k3YgSTLdLhKrQR2pgJfY";
+//
+// function authenticateUser(){
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: 'https://api.twitter.com/oauth/request_token',
+// 		headers:{
+// 			'oauth_nonce':'',
+// 			'oauth_callback':'https://sblbl.github.io/sisterator/?callback=true',
+// 			'oauth_signature_method':'HMAC-SHA1',
+// 			'oauth_timestamp': Date.time(),
+// 			'oauth_consumer_key': apiKey
+// 			'oauth_signature': ''
+// 		}
+// 	})
+// }
+//
+//
+//
+// // var authorizationBasic = $.base64.btoa(clientId + ':' + clientSecret);
+// var authorizationBasic = window.btoa(clientId + ':' + clientSecret);
+// $.ajax({
+//    type: 'POST',
+//    url: oAuth.AuthorizationServer,
+//    data: { username: 'John', password: 'Smith', grant_type: 'password' },
+//    dataType: "json",
+//    contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+//    xhrFields: {
+//       withCredentials: true
+//    },
+//    // crossDomain: true,
+//    headers: {
+//       'Authorization': 'Basic ' + authorizationBasic
+//    },
+//    //beforeSend: function (xhr) {
+//    //},
+//    success: function (result) {
+//       var token = result;
+//    },
+//    //complete: function (jqXHR, textStatus) {
+//    //},
+//    error: function (req, status, error) {
+//    alert(error);
+//    }
+// });

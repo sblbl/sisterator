@@ -3,6 +3,11 @@
 	font-size: 14px;
 }
 
+/*** title ***/
+#sisterator-title g {
+	fill: "#feda32";
+}
+
 #main {
 	width: 100%;
 	height: 50%;
@@ -44,6 +49,7 @@ span {
 	  color: #000000;
 	  padding: 0.3vw 3vw;
 	  text-decoration: none;
+		text-align: center;
 		border-radius: 10px;
 	  display: inline-block;
 		margin-bottom: 0.2vw;
@@ -51,10 +57,6 @@ span {
 	  font-size: 1em;
 	  cursor: pointer;
 }
-
-
-
-
 
 /**** SLIDER STYLE ****/
 .slider {
