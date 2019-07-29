@@ -3,8 +3,15 @@
 <head>
 	<title>Sisterator</title>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Noticia+Text&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.4/rgbcolor.min.js"></script>
+<!-- Optional if you want blur -->
+<script src="https://cdn.jsdelivr.net/npm/stackblur-canvas@^1/dist/stackblur.min.js"></script>
+<!-- Main canvg code -->
+<script src="https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="UTF-8">
 </head>
@@ -60,7 +67,7 @@
 
 </div>
 <div id="main">
-	<?xml version="1.0" encoding="utf-8"?>
+	<div id="svg-wrapper">
 
 	<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40%" height="40% " viewBox="0 0 3628.3  3185.4 ">
 	 <rect id="background" fill="#F0F8FF" width="3628.3" height="3186.1"/>
@@ -125,7 +132,17 @@
 	 </g>
 	</svg>
 </div>
-<div id="capture"></div>
+</div>
+<!-- <g class="node" transform="translate(210,330)">
+<foreignObject x="-8" y="-8">
+	<canas id="canvasID" xmlns="http://www.w3.org/1999/xhtml" height="800" width="600"></canvas>
+</foreignObject>
+</g> -->
+
+<div>
+    <span id="a-make" href="#">CMD + shift + 3 to make a screenshot</span>
+    <!-- <a id="a-download" href="#" style="display:none;">Download a screenshot</a> -->
+</div>
 
 	<script src="script.js"></script>
 </body>

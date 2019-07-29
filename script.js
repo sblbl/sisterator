@@ -326,64 +326,32 @@ jQuery(document).ready(function($) {
 	})
 
 
-	html2canvas('#capture').then(function(canvas) {
-    document.body.appendChild(canvas);
-});
-// $('.letter').mouseover(function (e){
-// 	$('.letter').style('fill','#FEDA32');
-// })
-// $('.letter').mouseleave(function (e) {
-// 	$('.letter').style('fill','#000000');
-// })
+// function svgConvert(){
+// 	canvg(document.getElementById("canvasID"),document.getElementById("svg-wrapper").html);
+// }
+// 	// function makeScreenshot()
+// 	//  {
+// 	// 		 html2canvas(document.getElementById("screenshot"), {scale: 2}).then(canvas =>
+// 	// 		 {
+// 	// 				 canvas.id = "canvasID";
+// 	// 				 var main = document.getElementById("main");
+// 	// 				 while (main.firstChild) { main.removeChild(main.firstChild); }
+// 	// 				 main.appendChild(canvas);
+// 	// 		 });
+// 	//  }
+//
+// 	 document.getElementById("a-make").addEventListener('click', function()
+// 	 {
+// 			 document.getElementById("a-make").style.display = "none";
+// 			 svgConvert();
+// 			 // makeScreenshot();
+// 			 document.getElementById("a-download").style.display = "inline";
+// 	 }, false);
+//
+// 	 document.getElementById("a-download").addEventListener('click', function()
+// 	 {
+// 			 this.href = document.getElementById("canvasID").toDataURL();
+// 			 this.download = "canvas-image.png";
+// 	 }, false);
 
 })
-
-// var apikey = "bMiQqeb5MlwyQAagk29MkVRHm";
-// var apisecret = "YqnCBm54oSchGtoGnUNsA4mXs6uuRUgmZrkhxFJgtJja6xiQuQ";
-//
-// var accestoken = "1155793512157339648-X2PPDcmGtVxpcdAtfZOq5cYEsxDurC";
-// var secrettoken = "poovbtI3njhEashjVgSaTqjq9k3YgSTLdLhKrQR2pgJfY";
-//
-// function authenticateUser(){
-// 	$.ajax({
-// 		type: 'POST',
-// 		url: 'https://api.twitter.com/oauth/request_token',
-// 		headers:{
-// 			'oauth_nonce':'',
-// 			'oauth_callback':'https://sblbl.github.io/sisterator/?callback=true',
-// 			'oauth_signature_method':'HMAC-SHA1',
-// 			'oauth_timestamp': Date.time(),
-// 			'oauth_consumer_key': apiKey
-// 			'oauth_signature': ''
-// 		}
-// 	})
-// }
-//
-//
-//
-// // var authorizationBasic = $.base64.btoa(clientId + ':' + clientSecret);
-// var authorizationBasic = window.btoa(clientId + ':' + clientSecret);
-// $.ajax({
-//    type: 'POST',
-//    url: oAuth.AuthorizationServer,
-//    data: { username: 'John', password: 'Smith', grant_type: 'password' },
-//    dataType: "json",
-//    contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-//    xhrFields: {
-//       withCredentials: true
-//    },
-//    // crossDomain: true,
-//    headers: {
-//       'Authorization': 'Basic ' + authorizationBasic
-//    },
-//    //beforeSend: function (xhr) {
-//    //},
-//    success: function (result) {
-//       var token = result;
-//    },
-//    //complete: function (jqXHR, textStatus) {
-//    //},
-//    error: function (req, status, error) {
-//    alert(error);
-//    }
-// });
