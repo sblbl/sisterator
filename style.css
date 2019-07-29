@@ -42,12 +42,12 @@ span {
 	  background-color: #FEDA32;
 	  border: none;
 	  color: #000000;
-	  padding: 0.8vw 3vw;
-	  text-align: center;
+	  padding: 0.3vw 3vw;
 	  text-decoration: none;
 		border-radius: 10px;
 	  display: inline-block;
 		margin-bottom: 0.2vw;
+		padding-left: 0.1vw;
 	  font-size: 1em;
 	  cursor: pointer;
 }
