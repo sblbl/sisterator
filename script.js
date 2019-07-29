@@ -42,18 +42,21 @@ let verify_bat_val = function () {
 	if ($_face_roundness.val()==6 && $_nun_dress.val()==6 && $_nun_width.val()==6 && $_pupil_proportion.val()==6 && $_eye_width.val()==6 && $_moustache_lenght.val()==6) {
 		$_bat_suit.attr('fill-opacity', 1)
 		$_background.attr('fill', '#00008B')
+		$('#main').css('background-color', '#00008B')
 		console.log('NANANANANANAN')
 		return true
 	} else {
 		$_bat_suit.attr('fill-opacity', 0)
 		$_background.attr('fill', '#F0F8FF')
+		$('#main').css('background-color', '#F0F8FF')
 		return false
 	}
 }
 
 /*---------------- MAIN FUNCTION ----------------*/
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function($) {
+
 
 	/*---------------- FACE ROUNDNESS ----------------*/
 
