@@ -3,6 +3,16 @@
 	font-size: 14px;
 }
 
+#main {
+	width: 100%;
+	height: 50%;
+	text-align: center;
+	background-color: #F0F8FF;
+}
+#main svg {
+	margin: auto;
+}
+
 /*** CSS GRID ***/
 .grid-container-title{
 	display: grid;
