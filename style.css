@@ -3,6 +3,10 @@
 	font-size: 14px;
 }
 
+body {
+	text-align: center;
+}
+
 #main {
 	width: 100%;
 	height: 50%;
@@ -17,6 +21,8 @@
 span {
 	text-align: center;
 	font-size: 1em;
+	font-family: 'Fira Code', monospace;
+
 }
 /*** CSS GRID ***/
 .grid-container-title{
@@ -26,14 +32,18 @@ span {
 
 .header {
 
-	padding-bottom: 2vw;
+	padding-bottom: 1vw;
 }
 
 .grid-container-custom {
 	display: grid;
 	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-	margin-bottom: 2vw;
+	margin-bottom: 1vw;
 	margin-top: 2vw;
+}
+
+.grid-container-item {
+	padding-bottom: .8vw;
 }
 
 /**** BUTTON STYLE ****/
