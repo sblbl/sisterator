@@ -63,16 +63,11 @@ jQuery(document).ready(function($) {
 	let mouseAbsPosition
 	let cursorXDifference
 
-	$_face_roundness.on('mousedown', function (e) {
+	/*$_face_roundness.on('mousedown', function (e) {
 		$(document).on('mousemove', change_roundness)
 		$(document).on('mouseup', end_change_roundness)
-	})
+	})*/
 
-
-	$('#face-roundness-cursor').on('mousedown', (e) => {
-		$(document).on('mousemove', change_roundness)
-		$(document).on('mouseup', end_change_roundness)
-	})
 
 	let change_roundness = function (e) {
 		let roundness = $_face_roundness.val()*30
@@ -82,10 +77,13 @@ jQuery(document).ready(function($) {
 		$('#face-roundness-val').html($_face_roundness.val())
 		verify_bat_val()
 	}
+
 	let end_change_roundness = function (e) {
 		$(document).off('mousemove', change_roundness)
 		$(document).off('mouseup', end_change_roundness)
 	}
+	$_face_roundness.on('change', change_roundness)
+	$_face_roundness.off('change', end_change_roundness)
 
 	/*---------------- EYE WIDTH  ----------------*/
 	$_eye_width.on('mousedown', function (e) {
