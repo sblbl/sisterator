@@ -61,9 +61,9 @@ jQuery(document).ready(function($) {
 	/*---------------- FACE ROUNDNESS ----------------*/
 
 
-	$_face_roundness.on('mousedown touchstart', function (e) {
-		$(document).on('mousemove touchmouve', change_roundness)
-		$(document).on('mouseup touchend', end_change_roundness)
+	$_face_roundness.on('mousedown vmousedown', function (e) {
+		$(document).on('mousemove vmousemove', change_roundness)
+		$(document).on('mouseup vmouseup', end_change_roundness)
 	})
 
 	let change_roundness = function (e) {
