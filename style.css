@@ -1,6 +1,7 @@
 * {
 	font-family: 'Noticia Text', serif;
 	font-size: 14px;
+	touch-action: none;
 }
 
 body {

@@ -56,21 +56,7 @@ let verify_bat_val = function () {
 /*---------------- MAIN FUNCTION ----------------*/
 
 jQuery(document).ready(function($) {
-
-	$(window).on('touchstart', function (e) {
-		$(document).on('touchmove', prevent_scroll)
-		$(document).on('touchend', end_prevent_scroll)
-	})
-
-	let prevent_scroll = function(e) {
-		e.preventDefault()
-	}
-
-	let end_prevent_scroll = function(e) {
-		$(document).off('touchmove', prevent_scroll)
-		$(document).off('touchend', end_prevent_scroll)
-	}
-
+	
 
 	/*---------------- FACE ROUNDNESS ----------------*/
 
