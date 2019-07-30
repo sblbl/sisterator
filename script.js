@@ -60,14 +60,11 @@ jQuery(document).ready(function($) {
 
 	/*---------------- FACE ROUNDNESS ----------------*/
 
-	let mouseAbsPosition
-	let cursorXDifference
 
-	/*$_face_roundness.on('mousedown', function (e) {
-		$(document).on('mousemove', change_roundness)
-		$(document).on('mouseup', end_change_roundness)
-	})*/
-
+	$_face_roundness.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmouve', change_roundness)
+		$(document).on('mouseup touchend', end_change_roundness)
+	})
 
 	let change_roundness = function (e) {
 		let roundness = $_face_roundness.val()*30
@@ -82,8 +79,7 @@ jQuery(document).ready(function($) {
 		$(document).off('mousemove', change_roundness)
 		$(document).off('mouseup', end_change_roundness)
 	}
-	$_face_roundness.onchange( change_roundness)
-	$_face_roundness.offchange(end_change_roundness)
+
 
 	/*---------------- EYE WIDTH  ----------------*/
 	$_eye_width.on('mousedown', function (e) {
