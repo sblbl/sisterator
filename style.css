@@ -54,23 +54,28 @@ margin: 5vw;
 /**** BUTTON STYLE ****/
 
 .button {
-	  background-color: #FEDA32;
-	  border: none;
-	  color: #000000;
-	  padding: 0.3vw 3vw 1vw;
-	  text-decoration: none;
-		text-align: center;
-		border-radius: 1.8vw;
-	  display: inline-block;
-		margin-top: 0.2vw;
-		padding-left: 0.1vw;
-	  font-size: 1em;
-	  cursor: pointer;
+	background-color: #FEDA32;
+	border: none;
+	color: #000000;
+	padding: 0 0.3vw;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 1.8vw;
+	display: inline-block;
+	margin-top: 0.2vw;
+	font-size: 1em;
+	cursor: pointer;
+}
+
+.button span {
+	padding-left: 3vw;
 }
 
 .button:focus {
 	outline: none;
 }
+
+
 
 
 
@@ -106,8 +111,21 @@ margin: 5vw;
 
 
 @media screen and (max-width:1000px){
+	*{
+		font-size: 1.2em;
+	}
+
+	.header {
+		padding: 0;
+	}
+
 	.grid-container-custom {
 		flex-direction: column;
+	}
+
+	.grid-container-item {
+		padding: 1.5vw 26vw;
+		text-align: left;
 	}
 
 	.slider::-webkit-slider-thumb {
@@ -130,18 +148,18 @@ margin: 5vw;
 
 
 	.button {
-		  background-color: #FEDA32;
-		  border: none;
-		  color: #000000;
-		  padding: 0.3vw 3vw 1vw;
-		  text-decoration: none;
-			text-align: center;
-			border-radius: 1.8vw;
-		  display: inline-block;
-			margin-top: 3vw;
-			padding-left: 0.1vw;
-		  font-size: 1em;
-		  cursor: pointer;
+		background-color: #FEDA32;
+		border: none;
+		color: #000000;
+		padding: .5vw 3vw 1vw;
+		text-decoration: none;
+		text-align: center;
+		border-radius: 1.8vw;
+		display: inline-block;
+		margin-top: 0;
+		padding-left: 0.1vw;
+		font-size: 1em;
+		cursor: pointer;
 	}
 
 	.button:focus {

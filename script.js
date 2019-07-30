@@ -325,33 +325,24 @@ jQuery(document).ready(function($) {
 		}
 	})
 
+	let resizeSvg = function (e) {
+		$('#nun-svg').attr('width', '100%')
+		$('#nun-svg').attr('height', '100%')
 
-// function svgConvert(){
-// 	canvg(document.getElementById("canvasID"),document.getElementById("svg-wrapper").html);
-// }
-// 	// function makeScreenshot()
-// 	//  {
-// 	// 		 html2canvas(document.getElementById("screenshot"), {scale: 2}).then(canvas =>
-// 	// 		 {
-// 	// 				 canvas.id = "canvasID";
-// 	// 				 var main = document.getElementById("main");
-// 	// 				 while (main.firstChild) { main.removeChild(main.firstChild); }
-// 	// 				 main.appendChild(canvas);
-// 	// 		 });
-// 	//  }
-//
-// 	 document.getElementById("a-make").addEventListener('click', function()
-// 	 {
-// 			 document.getElementById("a-make").style.display = "none";
-// 			 svgConvert();
-// 			 // makeScreenshot();
-// 			 document.getElementById("a-download").style.display = "inline";
-// 	 }, false);
-//
-// 	 document.getElementById("a-download").addEventListener('click', function()
-// 	 {
-// 			 this.href = document.getElementById("canvasID").toDataURL();
-// 			 this.download = "canvas-image.png";
-// 	 }, false);
+	}
+
+	$(window).on('resize', function (e) {
+		if ($(window).width() <= 1000) {
+			console.log('resizing')
+			resizeSvg()
+		} else {
+			$('#nun-svg').attr('width', '40%')
+			$('#nun-svg').attr('height', '40%')
+		}
+	})
+
+	if ($(window).width() <= 1000) {
+			resizeSvg()
+	}
 
 })
