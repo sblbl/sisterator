@@ -165,4 +165,8 @@ margin: 5vw;
 	.button:focus {
 		outline: none;
 	}
+
+	#a-make {
+		display: none;
+	}
 }
