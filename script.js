@@ -57,13 +57,27 @@ let verify_bat_val = function () {
 
 jQuery(document).ready(function($) {
 
+	$(window).on('touchstart', function (e) {
+		$(document).on('touchmove', prevent_scroll)
+		$(document).on('touchend', end_prevent_scroll)
+	})
+
+	let prevent_scroll = function(e) {
+		e.preventDefault()
+	}
+
+	let end_prevent_scroll = function(e) {
+		$(document).off('touchmove', prevent_scroll)
+		$(document).off('touchend', end_prevent_scroll)
+	}
+
 
 	/*---------------- FACE ROUNDNESS ----------------*/
 
 
-	$_face_roundness.on('mousedown vmousedown', function (e) {
-		$(document).on('mousemove vmousemove', change_roundness)
-		$(document).on('mouseup vmouseup', end_change_roundness)
+	$_face_roundness.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmove', change_roundness)
+		$(document).on('mouseup touchend', end_change_roundness)
 	})
 
 	let change_roundness = function (e) {
@@ -81,8 +95,8 @@ jQuery(document).ready(function($) {
 		$_face.attr('rx', roundness)
 		$_variable_veil.attr('height', $_face_roundness.val()*19)
 		$('#face-roundness-val').html($_face_roundness.val())
-		$(document).off('mousemove vmousemove', change_roundness)
-		$(document).off('mouseup vmouseup', end_change_roundness)
+		$(document).off('mousemove touchmove', change_roundness)
+		$(document).off('mouseup touchend', end_change_roundness)
 	}
 
 
@@ -104,21 +118,15 @@ jQuery(document).ready(function($) {
 
 	let end_change_eye_width = function (e) {
 		let width = $_eye_width.val() * 5 + 30
-		$_right_eye_sclera.attr('r', width)
-		$_right_eye_pupil.attr('r', width * pupil_prop)
-		$_left_eye_sclera.attr('r', width)
-		$_left_eye_pupil.attr('r', width * pupil_prop)
-		$('#eye-width-val').html($_eye_width.val())
-		verify_bat_val()
 		$(document).off('mousemove touchmove', change_eye_width)
 		$(document).off('mouseup touchend', end_change_eye_width)
 	}
 
 	/*---------------- PUPIL PROPORTION  ----------------*/
 
-	$_pupil_proportion.on('mousedown vmousedown', function (e) {
-		$(document).on('mousemove vmousemove', change_pupil_proportion)
-		$(document).on('mouseup vmouseup', end_change_pupil_proportion)
+	$_pupil_proportion.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmove', change_pupil_proportion)
+		$(document).on('mouseup touchend', end_change_pupil_proportion)
 	})
 
 	let change_pupil_proportion = function (e) {
@@ -131,15 +139,15 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_pupil_proportion = function (e) {
-		$(document).off('mousemove vmousemove', change_pupil_proportion)
-		$(document).off('mouseup vmouseup', end_change_pupil_proportion)
+		$(document).off('mousemove touchmove', change_pupil_proportion)
+		$(document).off('mouseup touchend', end_change_pupil_proportion)
 	}
 
 	/*---------------- MOUSTACHE LENGHT  ----------------*/
 
-	$_moustache_lenght.on('mousedown vmousedown', function (e) {
-		$(document).on('mousemove vmousemove', change_moustache_lenght)
-		$(document).on('mouseup vmouseup', end_change_moustache_lenght)
+	$_moustache_lenght.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmove', change_moustache_lenght)
+		$(document).on('mouseup touchend', end_change_moustache_lenght)
 	})
 
 	let change_moustache_lenght = function (e) {
@@ -158,15 +166,15 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_moustache_lenght = function (e) {
-		$(document).off('mousemove vmousemove', change_moustache_lenght)
-		$(document).off('mouseup vmouseup', end_change_moustache_lenght)
+		$(document).off('mousemove touchmove', change_moustache_lenght)
+		$(document).off('mouseup touchend', end_change_moustache_lenght)
 	}
 
 	/*---------------- BODY WIDTH  ----------------*/
 
-	$_nun_width.on('mousedown vmousedown', function (e) {
-		$(document).on('mousemove vmousemove', change_nun_width)
-		$(document).on('mouseup vmouseup', end_change_nun_width)
+	$_nun_width.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmove', change_nun_width)
+		$(document).on('mouseup touchend', end_change_nun_width)
 	})
 
 	let change_nun_width = function (e) {
@@ -185,15 +193,15 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_nun_width = function (e) {
-		$(document).off('mousemove vmousemove', change_nun_width)
-		$(document).off('mouseup vmouseup', end_change_nun_width)
+		$(document).off('mousemove touchmove', change_nun_width)
+		$(document).off('mouseup touchend', end_change_nun_width)
 	}
 
 	/*---------------- NUN DRESS  ----------------*/
 
-	$_nun_dress.on('mousedown vmousedown', function (e) {
-		$(document).on('mousemove vmousemove', change_nun_dress)
-		$(document).on('mouseup vmouseup', end_change_nun_dress)
+	$_nun_dress.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmove', change_nun_dress)
+		$(document).on('mouseup touchend', end_change_nun_dress)
 	})
 
 	let change_nun_dress = function (e) {
@@ -286,8 +294,8 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_nun_dress = function (e) {
-		$(document).off('mousemove vmousemove', change_nun_dress)
-		$(document).off('mouseup vmouseup', end_change_nun_dress)
+		$(document).off('mousemove touchmove', change_nun_dress)
+		$(document).off('mouseup touchend', end_change_nun_dress)
 	}
 
 	$_color_button.on('click', function () {
