@@ -1,6 +1,6 @@
 * {
 	font-family: 'Noticia Text', serif;
-	font-size: 14px;
+	font-size: 1em;
 }
 
 body {
@@ -13,6 +13,7 @@ body {
 	text-align: center;
 	background-color: #F0F8FF;
 }
+
 #main svg {
 	margin: auto;
 }
@@ -27,7 +28,7 @@ span {
 /*** CSS GRID ***/
 .grid-container-title{
 	display: grid;
-	grid-template-columns: auto;
+	grid-template-columns: 100%;
 }
 
 .header {
@@ -36,7 +37,7 @@ span {
 }
 
 .grid-container-custom {
-	display: grid;
+	display: flex;
 	grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 	margin-bottom: 1vw;
 	margin-top: 2vw;
@@ -46,25 +47,28 @@ span {
 	padding-bottom: .8vw;
 }
 
+.vuoto {
+margin: 5vw;
+}
 /**** BUTTON STYLE ****/
 
 .button {
 	  background-color: #FEDA32;
 	  border: none;
 	  color: #000000;
-	  padding: 0.3vw 3vw;
+	  padding: 0.3vw 3vw 1vw;
 	  text-decoration: none;
 		text-align: center;
-		border-radius: 10px;
+		border-radius: 1.8vw;
 	  display: inline-block;
-		margin-bottom: 0.2vw;
+		margin-top: 0.2vw;
 		padding-left: 0.1vw;
 	  font-size: 1em;
 	  cursor: pointer;
 }
 
 .button:focus {
-	outline: none
+	outline: none;
 }
 
 
@@ -75,7 +79,7 @@ span {
 	cursor: pointer;
   -webkit-appearance: none;
 	height: 0.5vw;
-  border-radius: 4px;
+  border-radius: 0.3vw;
   background: #dedede;
   outline: none;
 }
@@ -84,17 +88,62 @@ span {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 50%;
   background: #FEDA32;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 50%;
   background: #4CAF50;
   cursor: pointer;
+}
+
+
+@media screen and (max-width:1000px){
+	.grid-container-custom {
+		flex-direction: column;
+	}
+
+	.slider::-webkit-slider-thumb {
+	  -webkit-appearance: none;
+	  appearance: none;
+	  width: 4vw;
+	  height: 4vw;
+	  border-radius: 50%;
+	  background: #FEDA32;
+	  cursor: pointer;
+	}
+
+	.slider::-moz-range-thumb {
+	  width: 4vw;
+	  height: 4vw;
+	  border-radius: 50%;
+	  background: #4CAF50;
+	  cursor: pointer;
+	}
+
+
+	.button {
+		  background-color: #FEDA32;
+		  border: none;
+		  color: #000000;
+		  padding: 0.3vw 3vw 1vw;
+		  text-decoration: none;
+			text-align: center;
+			border-radius: 1.8vw;
+		  display: inline-block;
+			margin-top: 3vw;
+			padding-left: 0.1vw;
+		  font-size: 1em;
+		  cursor: pointer;
+	}
+
+	.button:focus {
+		outline: none;
+	}
 }
