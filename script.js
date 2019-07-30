@@ -76,6 +76,11 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_roundness = function (e) {
+		let roundness = $_face_roundness.val()*30
+		$_face.attr('rx', roundness)
+		$_face.attr('rx', roundness)
+		$_variable_veil.attr('height', $_face_roundness.val()*19)
+		$('#face-roundness-val').html($_face_roundness.val())
 		$(document).off('mousemove', change_roundness)
 		$(document).off('mouseup', end_change_roundness)
 	}
