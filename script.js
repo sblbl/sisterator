@@ -103,6 +103,13 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_eye_width = function (e) {
+		let width = $_eye_width.val() * 5 + 30
+		$_right_eye_sclera.attr('r', width)
+		$_right_eye_pupil.attr('r', width * pupil_prop)
+		$_left_eye_sclera.attr('r', width)
+		$_left_eye_pupil.attr('r', width * pupil_prop)
+		$('#eye-width-val').html($_eye_width.val())
+		verify_bat_val()
 		$(document).off('mousemove touchmove', change_eye_width)
 		$(document).off('mouseup touchend', end_change_eye_width)
 	}
