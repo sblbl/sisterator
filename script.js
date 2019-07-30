@@ -82,8 +82,8 @@ jQuery(document).ready(function($) {
 		$(document).off('mousemove', change_roundness)
 		$(document).off('mouseup', end_change_roundness)
 	}
-	$_face_roundness.on('change', change_roundness)
-	$_face_roundness.off('change', end_change_roundness)
+	$_face_roundness.onchange( change_roundness)
+	$_face_roundness.offchange(end_change_roundness)
 
 	/*---------------- EYE WIDTH  ----------------*/
 	$_eye_width.on('mousedown', function (e) {
