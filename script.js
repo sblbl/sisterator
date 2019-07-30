@@ -87,9 +87,9 @@ jQuery(document).ready(function($) {
 
 
 	/*---------------- EYE WIDTH  ----------------*/
-	$_eye_width.on('mousedown vmousedown', function (e) {
-		$(document).on('mousemove vmousemove', change_eye_width)
-		$(document).on('mouseup vmouseup', end_change_eye_width)
+	$_eye_width.on('mousedown touchstart', function (e) {
+		$(document).on('mousemove touchmove', change_eye_width)
+		$(document).on('mouseup touchend', end_change_eye_width)
 	})
 
 	let change_eye_width = function (e) {
@@ -103,8 +103,8 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_eye_width = function (e) {
-		$(document).off('mousemove vmousemove', change_eye_width)
-		$(document).off('mouseup vmouseup', end_change_eye_width)
+		$(document).off('mousemove touchmove', change_eye_width)
+		$(document).off('mouseup touchend', end_change_eye_width)
 	}
 
 	/*---------------- PUPIL PROPORTION  ----------------*/
