@@ -288,6 +288,7 @@ jQuery(document).ready(function($) {
 	/*---------------- NUN FACE  ----------------*/
 
 	$_color_button.on('click', function () {
+		let val = $_color_button.attr('value')
 		let colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 						  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
 						  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
@@ -298,7 +299,13 @@ jQuery(document).ready(function($) {
 						  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
 						  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
 						  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#FEDA32'];
-		$_face.attr('fill', colorArray[Math.floor(Math.random()*colorArray.length)])
+		if (val < 50) {
+			val++
+		} else {
+			val = 0
+		}
+		$_face.attr('fill', colorArray[val])
+		$_color_button.attr('value', val)
 	})
 
 	/*---------------- NUN NOSE  ----------------*/
