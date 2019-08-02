@@ -85,11 +85,14 @@ margin: 5vw;
 }
 
 #download {
-	/*background-color: #DEDEDE;*/
-	background-color: #000;
+	background-color: #FFFFFF;
+	margin-bottom: .6vw;
+}
+
+#download .button {
+	background-color: #000000;
 	color: #FFFFFF;
 	padding: 0 .4vw;
-	margin-bottom: .6vw;
 }
 
 
