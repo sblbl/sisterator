@@ -1,5 +1,4 @@
 /*---------------- NUN DATA ----------------*/
-
 let $_nun = $('#nun'),
 	$_body = $('#body'),
 	$_shoulders = $('#shoulders'),
@@ -84,7 +83,6 @@ jQuery(document).ready(function($) {
 		$_face.attr('rx', roundness)
 		$_variable_veil.attr('height', $_face_roundness.val()*19)
 		$('#face-roundness-val').html($_face_roundness.val())
-		updateImg()
 		$(document).off('mousemove touchmove', change_roundness)
 		$(document).off('mouseup touchend', end_change_roundness)
 	}
@@ -108,7 +106,6 @@ jQuery(document).ready(function($) {
 
 	let end_change_eye_width = function (e) {
 		let width = $_eye_width.val() * 5 + 30
-		updateImg()
 		$(document).off('mousemove touchmove', change_eye_width)
 		$(document).off('mouseup touchend', end_change_eye_width)
 	}
@@ -130,7 +127,6 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_pupil_proportion = function (e) {
-		updateImg()
 		$(document).off('mousemove touchmove', change_pupil_proportion)
 		$(document).off('mouseup touchend', end_change_pupil_proportion)
 	}
@@ -158,7 +154,6 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_moustache_lenght = function (e) {
-		updateImg()
 		$(document).off('mousemove touchmove', change_moustache_lenght)
 		$(document).off('mouseup touchend', end_change_moustache_lenght)
 	}
@@ -186,7 +181,6 @@ jQuery(document).ready(function($) {
 	}
 
 	let end_change_nun_width = function (e) {
-		updateImg()
 		$(document).off('mousemove touchmove', change_nun_width)
 		$(document).off('mouseup touchend', end_change_nun_width)
 	}
@@ -339,46 +333,30 @@ jQuery(document).ready(function($) {
 	/*---------------- SVG RESPONSIVE  ----------------*/
 
 	let resizeSvg = function (e) {
-		$('#nun-svg').attr('width', '100%')
-		$('#nun-svg').attr('height', '100%')
-
+		let window_width = $(window).width()
+		let nun_size = window_width <= 1000 ? window_width : window_width*0.4;
+		
+		$('#nun-svg').attr({'width': nun_size, 'height': nun_size})
+		$('canvas').attr({'width': nun_size, 'height': nun_size})
 	}
 
-	$(window).on('resize', function (e) {
-		if ($(window).width() <= 1000) {
-			console.log('resizing')
-			resizeSvg()
-		} else {
-			$('#nun-svg').attr('width', '40%')
-			$('#nun-svg').attr('height', '40%')
-		}
-	})
+	$(window).on('resize orientationchange', resizeSvg)
 
-	if ($(window).width() <= 1000) {
-			resizeSvg()
-	}
+	resizeSvg()
 
 	/*---------------- DOWNLOAD IMG  ----------------*/
 
-	let svg = document.getElementById('nun-svg')
-
-	function getDownloadURL(svg) {
-		let canvas = document.createElement('canvas');
-		canvas.width = 3628.3;
-		canvas.height = 3185.4;
-		let source = svg.parentNode.innerHTML;
-
-		canvg(canvas, source);
-
-		return canvas.toDataURL('image/png');
-	}
-
-	function updateDownloadURL(svg, link) {
-		link.href = getDownloadURL(svg);
-	}
-
-	updateDownloadURL(svg, document.getElementById('download'));
+	$('#download').on('click', function (e) {
+		let svg = document.querySelector('#nun-svg')
+		let serializer = new XMLSerializer()
+		let svgString = serializer.serializeToString(svg)
+		let canvas = $('#canvas')[0]
+		canvg(canvas, svgString, {ignoreDimensions: true })
+		let href = canvas.toDataURL()
+		$('#download').attr('href', href)
+		$('#download').attr('download', 'nun.png')
+	})
 	
 
-
 })
+
