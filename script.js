@@ -358,6 +358,26 @@ jQuery(document).ready(function($) {
 		let serializer = new XMLSerializer()
 		let svgString = serializer.serializeToString(svg)
 		let canvas = $('#canvas')[0]
+		let context = canvas.getContext("2d");
+		let devicePixelRatio = window.devicePixelRatio || 1,
+		    backingStoreRatio = context.webkitBackingStorePixelRatio ||
+		                        context.mozBackingStorePixelRatio ||
+		                        context.msBackingStorePixelRatio ||
+		                        context.oBackingStorePixelRatio ||
+		                        context.backingStorePixelRatio || 1,
+
+		    ratio = devicePixelRatio / backingStoreRatio;
+
+		// upscale the canvas if the two ratios don't match
+		if (devicePixelRatio !== backingStoreRatio){
+			let canWidth = canvas.width
+			let canHeight = canvas.height
+		   // adjust the original width and height of the canvas
+		   canvas.width = canWidth*ratio
+		   canvas.height = canHeight*ratio
+		   // scale the context to reflect the changes above
+		   context.scale(ratio, ratio);
+		}
 		canvg(canvas, svgString, {ignoreDimensions: true })
 		let href = canvas.toDataURL()
 		$('#download').attr('href', href)
