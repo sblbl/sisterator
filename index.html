@@ -1,140 +1,146 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sisterator</title>
-	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="manifest" href="favicon/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.4/rgbcolor.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/stackblur-canvas@^1/dist/stackblur.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<meta charset="UTF-8">
-</head>
-<body>
-<div class="grid-container">
-<div class="header">
-	<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="95%" height="95%" x="0px" y="0px"viewBox="0 0 532.2 63.4" style="enable-background:new 0 0 532.2 63.4;" xml:space="preserve">
-		<g>
-			<path class="letter" d="M50.4,52L37.8,63.4H12.6L0,52V40.2h12.6v8.9l3.2,2.9h12.6l3.2-2.9v-8.5l-1.6-1.4l-17.5-1.6L0,26.3V11.7L12.6,0.4h21.6
-				l12.6,11.3v7.7H34.2v-5.3l-2.8-2.4H22l-3.2,2.9v5.1l1.7,1.6l17.4,1.6l12.6,11.3V52z"/>
-			<path class="letter" d="M78.7,63.4H60v-63h18.7V63.4z"/>
-			<path class="letter" d="M139.2,52l-12.6,11.3h-25.2L88.8,52V40.2h12.6v8.9l3.2,2.9h12.6l3.2-2.9v-8.5l-1.6-1.4l-17.5-1.6L88.8,26.3V11.7l12.6-11.3
-				H123l12.6,11.3v7.7H123v-5.3l-2.8-2.4h-9.4l-3.2,2.9v5.1l1.7,1.6l17.4,1.6l12.6,11.3V52z"/>
-			<path class="letter" d="M177.7,11.7v51.7h-18.7V11.7h-16.2V0.4h51.1v11.3H177.7z"/>
-			<path class="letter" d="M246.1,63.4h-43.6v-63h42.2v11.3h-23.5v13.9h12.1V37h-12.1v15h24.8V63.4z"/>
-			<path class="letter" d="M309.9,63.4h-18.7L284.7,52V40.8l-2.9-2.6h-7.6v25.2h-18.7v-63h37.8l12.6,11.3v13.5L293.5,32l9.9,6.9v13.9L309.9,63.4z
-				 M287.1,14.6l-3.2-2.9h-9.7v15.1h9.7l3.2-2.9V14.6z"/>
-			<path class="letter" d="M342.9,53.1h-15.8l-3.3,10.3h-13L333,0h9.7l22.2,63.4h-18.6L342.9,53.1z M339.7,43.4L335,28.8l-4.8,14.6H339.7z"/>
-			<path class="letter" d="M393.7,11.7v51.7H375V11.7h-16.2V0.4h51.1v11.3H393.7z"/>
-			<path class="letter" d="M466.6,11.7V52L454,63.4h-25.2L416.2,52V11.7l12.6-11.3H454L466.6,11.7z M438.2,11.7l-3.2,2.9v34.6l3.2,2.9h6.5l3.2-2.9
-				V14.6l-3.2-2.9H438.2z"/>
-			<path class="letter" d="M532.2,63.4h-18.7L507,52V40.8l-2.9-2.6h-7.6v25.2h-18.7v-63h37.8l12.6,11.3v13.5L515.8,32l9.9,6.9v13.9L532.2,63.4z
-				 M509.4,14.6l-3.2-2.9h-9.7v15.1h9.7l3.2-2.9V14.6z"/>
-		</g>
-	</svg>
-</div>
-</div>
-	<div class="grid-container-custom">
-
-		<div class="grid-container-item"></div>
-		<div class="grid-container-item"><span>face squaring: </span><span id="face-roundness-val">5</span><input type="range" class="slider" name="face-roundness" id="face-roundness" min="0" max="10" value="5"> 	</div>
-		<div class="grid-container-item"><span>	eye radius: </span><span id="eye-width-val">5</span><input type="range" class="slider" name="eye-width" id="eye-width" min="0" max="10" value="5"></div>
-		<div class="grid-container-item"><span>nun gloom: </span><span id="nun-dress-val">10</span><input type="range" class="slider" name="nun-dress" id="nun-dress" min="0" max="10" value="10"></div>
-		<div class="grid-container-item"><span>nun width: </span><span id="nun-width-val">5</span><input type="range" class="slider" name="nun-width" id="nun-width" min="0" max="10"></div>
-		<div class="grid-container-item"><span>pupil mass: </span><span id="pupil-proportion-val">5</span><input type="range" class="slider" name="pupil-proportion" id="pupil-proportion" min="0" max="10"></div>
-		<div class="grid-container-item"><span>moustache: </span><span id="moustache-lenght-val">0</span><input type="range" class="slider" name="moustache-lenght" id="moustache-lenght" min="0" max="10" value="0"></div>
-		<div class="grid-container-item"><button type="button" class="button" value="50" id="color-button">Skin colour</button></div>
-		<div class="grid-container-item"><button type="button" class="button" id="nose-path" value="1">Nose type</button></div>
-		<div class="grid-container-item"></div>
-
-	</div>
-	<a id="download" href="#" download="nun.png"><button class="button"s>† Download †</button></a>
-<div id="main">
-	<div id="svg-wrapper">
-		<svg version="1.1" id="nun-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000px" height="1000px" viewBox="0 0 3628.3  3185.4 ">
-
-		 <rect id="background" fill="#F0F8FF" width="3628.3" height="3186.1"/>
-
-		 <g id="nun">
-			<g id="bat-suit" fill-opacity="0">
-				<ellipse fill="#FEDA32" cx="1814.1" cy="2037.7" rx="1814.2" ry="1189.5"/>
+	<head>
+		<title>Sisterator</title>
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.4/rgbcolor.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/stackblur-canvas@^1/dist/stackblur.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Sisterator - Create your own custom nun avatar">
+		<meta name="keywords" content="nun, avatar, generator, sisterator">
+		<meta name="author" content="marta fioravanti & eleonora cappuccio">
+		<meta property="og:title" content="Sisterator">
+		<meta property="og:description" content="Create your own custom nun avatar">
+		<meta property="og:image" content="https://sblbl.github.io/sisterator/og.png">
+		<meta property="og:url" content="https://sblbl.github.io/sisterator/">
+		<meta property="og:type" content="website">
+	</head>
+	<body>
+		<div class="grid-container">
+		<div class="header">
+			<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="95%" height="95%" x="0px" y="0px"viewBox="0 0 532.2 63.4" style="enable-background:new 0 0 532.2 63.4;" xml:space="preserve">
 				<g>
-					<polyline fill="#4D4D4D" points="1982.3,759.3 1916.4,954.5 2048.2,954.5 1982.3,759.3 		"/>
-					<polyline fill="#4D4D4D" points="1646,759.3 1711.9,954.5 1580.1,954.5 1646,759.3 		"/>
+					<path class="letter" d="M50.4,52L37.8,63.4H12.6L0,52V40.2h12.6v8.9l3.2,2.9h12.6l3.2-2.9v-8.5l-1.6-1.4l-17.5-1.6L0,26.3V11.7L12.6,0.4h21.6
+						l12.6,11.3v7.7H34.2v-5.3l-2.8-2.4H22l-3.2,2.9v5.1l1.7,1.6l17.4,1.6l12.6,11.3V52z"/>
+					<path class="letter" d="M78.7,63.4H60v-63h18.7V63.4z"/>
+					<path class="letter" d="M139.2,52l-12.6,11.3h-25.2L88.8,52V40.2h12.6v8.9l3.2,2.9h12.6l3.2-2.9v-8.5l-1.6-1.4l-17.5-1.6L88.8,26.3V11.7l12.6-11.3
+						H123l12.6,11.3v7.7H123v-5.3l-2.8-2.4h-9.4l-3.2,2.9v5.1l1.7,1.6l17.4,1.6l12.6,11.3V52z"/>
+					<path class="letter" d="M177.7,11.7v51.7h-18.7V11.7h-16.2V0.4h51.1v11.3H177.7z"/>
+					<path class="letter" d="M246.1,63.4h-43.6v-63h42.2v11.3h-23.5v13.9h12.1V37h-12.1v15h24.8V63.4z"/>
+					<path class="letter" d="M309.9,63.4h-18.7L284.7,52V40.8l-2.9-2.6h-7.6v25.2h-18.7v-63h37.8l12.6,11.3v13.5L293.5,32l9.9,6.9v13.9L309.9,63.4z
+						M287.1,14.6l-3.2-2.9h-9.7v15.1h9.7l3.2-2.9V14.6z"/>
+					<path class="letter" d="M342.9,53.1h-15.8l-3.3,10.3h-13L333,0h9.7l22.2,63.4h-18.6L342.9,53.1z M339.7,43.4L335,28.8l-4.8,14.6H339.7z"/>
+					<path class="letter" d="M393.7,11.7v51.7H375V11.7h-16.2V0.4h51.1v11.3H393.7z"/>
+					<path class="letter" d="M466.6,11.7V52L454,63.4h-25.2L416.2,52V11.7l12.6-11.3H454L466.6,11.7z M438.2,11.7l-3.2,2.9v34.6l3.2,2.9h6.5l3.2-2.9
+						V14.6l-3.2-2.9H438.2z"/>
+					<path class="letter" d="M532.2,63.4h-18.7L507,52V40.8l-2.9-2.6h-7.6v25.2h-18.7v-63h37.8l12.6,11.3v13.5L515.8,32l9.9,6.9v13.9L532.2,63.4z
+						M509.4,14.6l-3.2-2.9h-9.7v15.1h9.7l3.2-2.9V14.6z"/>
 				</g>
-				<path fill="#4D4D4D" d="M2205.5,1720.3c66.8,100.7,163.8,187,331.4,140.4c164-45.7,216.5-175.9,187.9-279
-					c-23.1-83-77.6-176.8-174.8-231.7c539.1-150,968.9,169.9,1031,393.1c50.2,180.3,5.7,374.2-68.5,493.3
-					c-74.2,119.1-263.3,297-287.1,318.5c40.7-121.7,37.4-219.2,13.3-263.2c-24.2-44-72.7-114-195.2-79.9
-					c-113.5,31.6-218.9,195.1-235.1,235.4c0,0-125.2-135.7-230-106.5c-103.2,28.7-116.8,63.4-159.9,144l-212.8-764.4L2205.5,1720.3z"/>
-				<path fill="#4D4D4D" d="M1422.7,1720.3L1210,2484.8c-43.2-80.6-56.8-115.3-159.9-144c-104.8-29.2-230,106.5-230,106.5
-					c-16.3-40.3-121.6-203.8-235.1-235.4c-122.5-34.1-171,35.9-195.2,79.9c-24.1,44-27.4,141.5,13.3,263.2
-					c-23.8-21.5-212.9-199.4-287.1-318.5c-74.2-119.2-118.7-313-68.5-493.3c62.1-223.2,491.9-543.1,1031-393.1
-					c-97.3,54.9-151.8,148.7-174.8,231.7c-28.7,103.1,23.8,233.3,187.9,279c167.5,46.6,264.6-39.6,331.4-140.4L1422.7,1720.3z"/>
-			</g>
-			<g id="body">
-			<circle id="shoulders" cx="1814.2" cy="2198" r="311.1"/>
-			<rect id="trunk" x="1503.9" y="2199.9" width="620.5" height="985.5"/>
-			<line id="hinge" fill="transparent" stroke="#FFFFFF" stroke-width="10" x1="1814.2" y1="1886.9" x2="1814.2" y2="3188.6"/>
-			</g>
-			<path id="back-veil" d="M1468.8,1908.4V1418c0-87.4,70.8-158.2,158.2-158.2h374.3c87.4,0,158.2,70.8,158.2,158.2v490.5
-			L1468.8,1908.4L1468.8,1908.4z"/>
-			<g id="visage">
-				<rect id="face" x="1534.7" y="1322.3" fill="#FEDA32" width="558.9" height="530.7"/>
-				<g id="moustache" stroke-opacity="0">
-					<line stroke-width="3" stroke="#000000" x1="1817.6" y1="1684.1" x2="1831.7" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1829.4" y1="1684.1" x2="1843.6" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1841.3" y1="1684.1" x2="1855.5" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1853.1" y1="1684.1" x2="1867.3" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1865" y1="1684.1" x2="1879.2" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1811" y1="1684.1" x2="1796.8" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1799.7" y1="1684.1" x2="1785.5" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1788.4" y1="1684.1" x2="1774.2" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1777.1" y1="1684.1" x2="1763" y2="1712.4"/>
-					<line stroke-width="3" stroke="#000000" x1="1765.8" y1="1684.1" x2="1751.6" y2="1712.4"/>
-				</g>
-				<g id="eyes-group">
-					<g id="left-eye">
-						<circle id="left-eye-sclera" fill="#FFFFFF" cx="1667.8" cy="1558.9" r="44.1"/>
-						<circle id="left-eye-pupil" cx="1667.8" cy="1558.9" r="21.8"/>
-					</g>
-					<g id="right-eye">
-						<circle id="right-eye-sclera" fill="#FFFFFF" cx="1960.5" cy="1558.9" r="44.1"/>
-						<circle id="right-eye-pupil" cx="1960.5" cy="1558.9" r="21.8"/>
-				</g>
-			</g>
-			<polygon id="nose-1" class="nose" fill="#EB5D78" fill-opacity="1" points="1780.4,1659.9 1814.2,1605.7 1814.2,1605.7 1848,1659.9"/>
-			<circle id="nose-2" class="nose" fill="#EB5D78" fill-opacity=".0" class="st5" cx="1814.2" cy="1638.9" r="26.2"/>
-			<path id="nose-3" class="nose" fill="#EB5D78" fill-opacity=".0"  class="st5" d="M1827.5,1665.1h-26.6c-2.9,0-5.2-2.6-4.8-5.5l10.5-83.3c0.3-2.4,2.4-4.3,4.8-4.3h6.6c2.5,0,4.6,1.9,4.9,4.3
-				l9.6,83.3C1832.7,1662.5,1830.4,1665.1,1827.5,1665.1z"/>
-			<path id="mouth" stroke="#FFFFFF" stroke-width="10" fill="transparent" d="M1855.7,1722.1c0,22.9-18.6,41.5-41.5,41.5s-41.5-18.6-41.5-41.5"/>
-			<g id="front-veil">
-			 <rect x="1534.7" y="1322.3" fill="#FFFFFF" width="558.8" height="78.2"/>
-			 <rect id="variable-front-veil" x="1534.7" y="1361.6" fill="#FFFFFF" width="558.8" height="78.2"/>
-			</g>
-			</g>
-		 </g>
-		</svg>
-	</div>
-</div>
-<canvas id="canvas" width="1000px" height="1000px"></canvas>
+			</svg>
+		</div>
+		</div>
+			<div class="grid-container-custom">
+				<div class="grid-container-item"><span>face squaring: </span><span id="face-roundness-val">5</span><input type="range" class="slider" name="face-roundness" id="face-roundness" min="0" max="10" value="5"> 	</div>
+				<div class="grid-container-item"><span>	eye radius: </span><span id="eye-width-val">5</span><input type="range" class="slider" name="eye-width" id="eye-width" min="0" max="10" value="5"></div>
+				<div class="grid-container-item"><span>nun gloom: </span><span id="nun-dress-val">10</span><input type="range" class="slider" name="nun-dress" id="nun-dress" min="0" max="10" value="10"></div>
+				<div class="grid-container-item"><span>nun width: </span><span id="nun-width-val">5</span><input type="range" class="slider" name="nun-width" id="nun-width" min="0" max="10"></div>
+				<div class="grid-container-item"><span>pupil mass: </span><span id="pupil-proportion-val">5</span><input type="range" class="slider" name="pupil-proportion" id="pupil-proportion" min="0" max="10"></div>
+				<div class="grid-container-item"><span>moustache: </span><span id="moustache-lenght-val">0</span><input type="range" class="slider" name="moustache-lenght" id="moustache-lenght" min="0" max="10" value="0"></div>
+				
+				<div class="grid-container-item"><button type="button" class="button" value="50" id="color-button">Skin colour</button>
+				<button type="button" class="button" id="nose-path" value="1">Nose type</button></div>
+				<div class="grid-container-item"></div>
+			</div>
+			<a id="download" href="#" download="nun.png"><button class="button"s>† Download †</button></a>
+		<div id="main">
+			<div id="svg-wrapper">
+				<svg version="1.1" id="nun-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000px" height="1000px" viewBox="0 0 3628.3  3185.4 ">
 
-<script src="script.js"></script>
-</body>
+				<rect id="background" fill="#F0F8FF" width="3628.3" height="3186.1"/>
+
+				<g id="nun">
+					<g id="bat-suit" fill-opacity="0">
+						<ellipse fill="#FEDA32" cx="1814.1" cy="2037.7" rx="1814.2" ry="1189.5"/>
+						<g>
+							<polyline fill="#4D4D4D" points="1982.3,759.3 1916.4,954.5 2048.2,954.5 1982.3,759.3 		"/>
+							<polyline fill="#4D4D4D" points="1646,759.3 1711.9,954.5 1580.1,954.5 1646,759.3 		"/>
+						</g>
+						<path fill="#4D4D4D" d="M2205.5,1720.3c66.8,100.7,163.8,187,331.4,140.4c164-45.7,216.5-175.9,187.9-279
+							c-23.1-83-77.6-176.8-174.8-231.7c539.1-150,968.9,169.9,1031,393.1c50.2,180.3,5.7,374.2-68.5,493.3
+							c-74.2,119.1-263.3,297-287.1,318.5c40.7-121.7,37.4-219.2,13.3-263.2c-24.2-44-72.7-114-195.2-79.9
+							c-113.5,31.6-218.9,195.1-235.1,235.4c0,0-125.2-135.7-230-106.5c-103.2,28.7-116.8,63.4-159.9,144l-212.8-764.4L2205.5,1720.3z"/>
+						<path fill="#4D4D4D" d="M1422.7,1720.3L1210,2484.8c-43.2-80.6-56.8-115.3-159.9-144c-104.8-29.2-230,106.5-230,106.5
+							c-16.3-40.3-121.6-203.8-235.1-235.4c-122.5-34.1-171,35.9-195.2,79.9c-24.1,44-27.4,141.5,13.3,263.2
+							c-23.8-21.5-212.9-199.4-287.1-318.5c-74.2-119.2-118.7-313-68.5-493.3c62.1-223.2,491.9-543.1,1031-393.1
+							c-97.3,54.9-151.8,148.7-174.8,231.7c-28.7,103.1,23.8,233.3,187.9,279c167.5,46.6,264.6-39.6,331.4-140.4L1422.7,1720.3z"/>
+					</g>
+					<g id="body">
+					<circle id="shoulders" cx="1814.2" cy="2198" r="311.1"/>
+					<rect id="trunk" x="1503.9" y="2199.9" width="620.5" height="985.5"/>
+					<line id="hinge" fill="transparent" stroke="#FFFFFF" stroke-width="10" x1="1814.2" y1="1886.9" x2="1814.2" y2="3188.6"/>
+					</g>
+					<path id="back-veil" d="M1468.8,1908.4V1418c0-87.4,70.8-158.2,158.2-158.2h374.3c87.4,0,158.2,70.8,158.2,158.2v490.5
+					L1468.8,1908.4L1468.8,1908.4z"/>
+					<g id="visage">
+						<rect id="face" x="1534.7" y="1322.3" fill="#FEDA32" width="558.9" height="530.7"/>
+						<g id="moustache" stroke-opacity="0">
+							<line stroke-width="3" stroke="#000000" x1="1817.6" y1="1684.1" x2="1831.7" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1829.4" y1="1684.1" x2="1843.6" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1841.3" y1="1684.1" x2="1855.5" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1853.1" y1="1684.1" x2="1867.3" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1865" y1="1684.1" x2="1879.2" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1811" y1="1684.1" x2="1796.8" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1799.7" y1="1684.1" x2="1785.5" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1788.4" y1="1684.1" x2="1774.2" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1777.1" y1="1684.1" x2="1763" y2="1712.4"/>
+							<line stroke-width="3" stroke="#000000" x1="1765.8" y1="1684.1" x2="1751.6" y2="1712.4"/>
+						</g>
+						<g id="eyes-group">
+							<g id="left-eye">
+								<circle id="left-eye-sclera" fill="#FFFFFF" cx="1667.8" cy="1558.9" r="44.1"/>
+								<circle id="left-eye-pupil" cx="1667.8" cy="1558.9" r="21.8"/>
+							</g>
+							<g id="right-eye">
+								<circle id="right-eye-sclera" fill="#FFFFFF" cx="1960.5" cy="1558.9" r="44.1"/>
+								<circle id="right-eye-pupil" cx="1960.5" cy="1558.9" r="21.8"/>
+						</g>
+					</g>
+					<polygon id="nose-1" class="nose" fill="#EB5D78" fill-opacity="1" points="1780.4,1659.9 1814.2,1605.7 1814.2,1605.7 1848,1659.9"/>
+					<circle id="nose-2" class="nose" fill="#EB5D78" fill-opacity=".0" class="st5" cx="1814.2" cy="1638.9" r="26.2"/>
+					<path id="nose-3" class="nose" fill="#EB5D78" fill-opacity=".0"  class="st5" d="M1827.5,1665.1h-26.6c-2.9,0-5.2-2.6-4.8-5.5l10.5-83.3c0.3-2.4,2.4-4.3,4.8-4.3h6.6c2.5,0,4.6,1.9,4.9,4.3
+						l9.6,83.3C1832.7,1662.5,1830.4,1665.1,1827.5,1665.1z"/>
+					<path id="mouth" stroke="#FFFFFF" stroke-width="10" fill="transparent" d="M1855.7,1722.1c0,22.9-18.6,41.5-41.5,41.5s-41.5-18.6-41.5-41.5"/>
+					<g id="front-veil">
+					<rect x="1534.7" y="1322.3" fill="#FFFFFF" width="558.8" height="78.2"/>
+					<rect id="variable-front-veil" x="1534.7" y="1361.6" fill="#FFFFFF" width="558.8" height="78.2"/>
+					</g>
+					</g>
+				</g>
+				</svg>
+			</div>
+		</div>
+		<canvas id="canvas" width="1000px" height="1000px"></canvas>
+		<script src="script.js"></script>
+	</body>
 </html>
