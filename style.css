@@ -8,6 +8,10 @@ body {
 	text-align: center;
 	margin: 0;
 	padding: 1em 0 0 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 canvas {
@@ -44,7 +48,15 @@ span {
 }
 
 .header {
+	max-height: 10vh;
 	padding-bottom: 1vw;
+}
+
+.header svg {
+	max-height: 10vh;
+	display: block;
+	margin: 0 auto;
+	object-fit: contain;
 }
 
 .grid-container-custom {
@@ -55,8 +67,12 @@ span {
 }
 
 .grid-container-item {
-	padding-bottom: .8vw;
 	font-size: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
 }
 
 .vuoto {
@@ -102,16 +118,13 @@ span {
 }
 
 
-
-
-
 /**** SLIDER STYLE ****/
 .slider {
 	cursor: pointer;
 	-webkit-appearance: none;
-	height: 0.5vw;
+	height: 1vh;
 	width: 90%;
-	border-radius: 0.3vw;
+	border-radius: 0.3vh;
 	background: #dedede;
 	outline: none;
 }
@@ -120,8 +133,8 @@ span {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 3vh;
+  height: 3vh;
   border-radius: 50%;
   background: #FEDA32;
   cursor: pointer;
@@ -136,7 +149,7 @@ span {
 }
 
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:800px){
 	* {
 		font-size: 1em;
 	}
@@ -159,6 +172,7 @@ span {
 	.grid-container-item.special-buttons {
 		flex-grow: 1;	
 		display: flex;
+		flex-direction: row;
 		justify-content: center;
 	}
 
@@ -190,7 +204,7 @@ span {
 }
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:800px){
 	* {
 		font-size: 16px;
 	}
