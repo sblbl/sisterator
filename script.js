@@ -46,8 +46,8 @@ let verify_bat_val = function () {
 		return true
 	} else {
 		$_bat_suit.attr('fill-opacity', 0)
-		$_background.attr('fill', '#F0F8FF')
-		$('#main').css('background-color', '#F0F8FF')
+		$_background.attr('fill', '#C0FCFC')
+		$('#main').css('background-color', '#C0FCFC')
 		return false
 	}
 }
