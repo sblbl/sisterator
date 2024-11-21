@@ -6,16 +6,18 @@
 
 body {
 	text-align: center;
-	margin: 0;
-	padding: 1em 0 0 0;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+    margin: 0;
+    padding: 1em 0 0 0;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 canvas {
-	/*visibility: hidden;*/
 	display: none;
 }
 
@@ -24,17 +26,39 @@ img {
 	display: none;
 }
 
+#header-container {
+	width: 100vw;
+}
+
+.header {
+	max-height: 10vh;
+	padding-bottom: 1vw;
+}
+
 #main {
-	width: 100%;
-	height: 50%;
-	text-align: center;
-	background-color: #C0FCFC;
+	width: 100vw;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #C0FCFC;
 }
 
-#main svg {
-	margin: auto;
+#svg-wrapper {
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#nun-svg {
+	width: auto;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
 
 span {
 	text-align: center;
@@ -47,12 +71,8 @@ span {
 	grid-template-columns: 100%;
 }
 
-.header {
-	max-height: 10vh;
-	padding-bottom: 1vw;
-}
-
 .header svg {
+	height: 100%;
 	max-height: 10vh;
 	display: block;
 	margin: 0 auto;
@@ -158,6 +178,11 @@ span {
 		padding: 0;
 	}
 
+	.header svg {
+		height: 100%;
+		max-height: 8vh;
+	}
+
 	.grid-container-custom {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -167,6 +192,10 @@ span {
 	.grid-container-item {
 		padding: 8px 24px;
 		text-align: center;
+	}
+
+	.grid-container-item div {
+		font-size: .9rem;
 	}
 
 	.grid-container-item.special-buttons {

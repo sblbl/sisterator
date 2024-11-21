@@ -58,7 +58,6 @@ jQuery(document).ready(function($) {
 
 	//console.log($('#nun').html())
 	//$('#download').attr('href', `data:image/svg+xml;utf8,${$('#svg-wrapper').html()}`)
-	
 
 	/*---------------- FACE ROUNDNESS ----------------*/
 
